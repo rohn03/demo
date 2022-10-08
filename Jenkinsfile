@@ -15,7 +15,7 @@ def app
   }
   
   stage('Push image'){
-    docker.withRegistry('https:localhost:5000', 'docker-credentials'){
+    docker.withRegistry('https://localhost:5000', 'docker-credentials'){
       app.push("${env.BUILD_NUMBER}")
       app.push("latest")
     }
